@@ -4,7 +4,7 @@ O projeto consiste na criação de um site de demonstração de uma loja online 
 
 Autores
 
-@RebecaSousaMorais ([https://github.com/RebecaSousaMorais](https://github.com/RebecaSousaMorais))
+@RebecaSousaMorais
 
 Aprendizados
 
