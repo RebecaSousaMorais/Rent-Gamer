@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Desejos - Rent Gamer</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #fff;
+      color: #000;
+    }
+
+    .container {
+      margin-top: 20px;
+    }
+
+    .wishlist-table {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .wishlist-table th,
+    .wishlist-table td {
+      text-align: center;
+    }
+
+    .wishlist-table th {
+      background-color: #1a237e;
+      color: #fff;
+    }
+
+    .wishlist-table td img {
+      width: 100px;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .wishlist-table .remove-btn {
+      background-color: #f44336;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .wishlist-table .remove-btn:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1a237e;">
+    <div class="container">
+      <a class="navbar-brand" href="/index.html">
+        <img src="/Logo RentGamer.png" alt="Rent Gamer Logo" style="width: 100px; height: 100px; margin-right: 10px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="form-inline mx-auto">
+          <input class="form-control mr-sm-2" type="search" placeholder="Buscar jogos" aria-label="Buscar">
+        </form>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Lista de Desejos.html">
+              <img src="/IMGS - ICONES/lista_de_desejos-branco.png" alt="Lista de Desejos" style="width: 20px;">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">
+              <img src="/IMGS - ICONES/carrinho-branco3.png" alt="Carrinho" style="width: 20px;">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Lista de Desejos</h1>
+
+    <table class="table wishlist-table">
+      <thead>
+        <tr>
+          <th>Imagem</th>
+          <th>Nome do Jogo</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody id="wishlist-container">
+        <!-- Itens da lista de desejos serão carregados aqui -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const wishlistContainer = document.getElementById('wishlist-container');
+      const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+      if (wishlist.length > 0) {
+        wishlist.forEach(item => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td><img src="/path/to/image/${item.image}" alt="${item.name}"></td>
+            <td>${item.name}</td>
+            <td><button class="remove-btn" onclick="removeFromWishlist('${item.name}')">Remover</button></td>
+          `;
+          wishlistContainer.appendChild(row);
+        });
+      } else {
+        wishlistContainer.innerHTML = '<tr><td colspan="3" class="text-center">Sua lista de desejos está vazia.</td></tr>';
+      }
+    });
+
+    function removeFromWishlist(name) {
+      let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+      wishlist = wishlist.filter(item => item.name !== name);
+      localStorage.setItem('wishlist', JSON.stringify(wishlist));
+      location.reload(); // Atualiza a página para refletir a remoção
+    }
+  </script>
+
+</body>
+
+</html>

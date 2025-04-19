@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>God of War - Rent Gamer</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #fff;
+      color: #000;
+    }
+
+    .navbar {
+      background-color: #1a237e;
+    }
+
+    .navbar-brand img {
+      width: 100px;
+      height: 100px;
+      margin-right: 10px;
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #fff !important;
+    }
+
+    .container {
+      margin-top: 20px;
+    }
+
+    .game-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .game-cover {
+      flex: 1;
+      max-width: 300px;
+      margin-right: 20px;
+    }
+
+    .game-cover img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .game-info {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .game-info h2 {
+      margin-bottom: 10px;
+    }
+
+    .game-info p {
+      margin-bottom: 5px;
+    }
+
+    .breadcrumb {
+      background: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .breadcrumb-item+.breadcrumb-item::before {
+      content: ">";
+    }
+
+    .license-options {
+      margin-top: 20px;
+    }
+
+    .license-options button {
+      margin: 0 5px 10px 0;
+      background-color: white;
+      color: black;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      width: auto;
+      font-size: 0.9em;
+      padding: 10px 15px;
+    }
+
+    .license-options button:hover {
+      background-color: #f0f0f0;
+    }
+
+    .license-options button.selected {
+      background-color: #1a237e;
+      color: white;
+    }
+
+    .detalhes-pagamento {
+      margin-top: 10px;
+      font-size: 1.1em;
+    }
+
+    .wishlist {
+      text-align: left;
+      margin-top: 10px;
+    }
+
+    .wishlist img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .btn-compra {
+      background-color: #4caf50;
+      border-color: #4caf50;
+      color: white;
+      width: 50%;
+      border-radius: 20px;
+      margin-top: 10px;
+      font-size: 1.2em;
+      padding: 15px;
+    }
+
+    .btn-compra:disabled {
+      background-color: #a5d6a7;
+      border-color: #a5d6a7;
+    }
+
+    footer {
+      background-color: #1a237e;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+  </style>
+  <script>
+    function showDetails(type) {
+      let detailsText = '';
+
+      switch (type) {
+        case 'primaria':
+          detailsText = `
+            <div>Licença Primária: R$ 79,99</div>
+            <div>Até 3x de R$ 26,66 sem juros ou R$ 75,99 via Pix</div>
+          `;
+          break;
+        case 'secundaria':
+          detailsText = `
+            <div>Licença Secundária: R$ 59,99</div>
+            <div>Até 3x de R$ 20,00 sem juros ou R$ 57,99 via Pix</div>
+          `;
+          break;
+        case 'aluguel':
+          detailsText = `
+            <div>Aluguel: R$ 29,99</div>
+            <div>Até 3x de R$ 10,00 sem juros ou R$ 28,99 via Pix</div>
+          `;
+          break;
+      }
+
+      document.getElementById('detalhes-pagamento').innerHTML = detailsText;
+
+      let buttons = document.querySelectorAll('.license-options button');
+      buttons.forEach(button => {
+        button.classList.remove('selected');
+      });
+
+      document.getElementById(type).classList.add('selected');
+
+      document.getElementById('btn-compra').disabled = false;
+    }
+
+    function handlePurchaseClick(event) {
+      if (document.getElementById('btn-compra').disabled) {
+        event.preventDefault();
+        alert('Por favor, selecione o tipo de licença antes de comprar.');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('btn-compra').addEventListener('click', handlePurchaseClick);
+    });
+  </script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/index.html">
+        <img src="/Logo RentGamer.png" alt="Rent Gamer Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="form-inline mx-auto">
+          <input class="form-control mr-sm-2" type="search" placeholder="Buscar jogos" aria-label="Buscar">
+        </form>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Lista de Desejos.html">
+              <img src="/IMGS - ICONES/lista_de_desejos-branco.png" alt="Lista de Desejos" style="width: 20px;">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">
+              <img src="/IMGS - ICONES/carrinho-branco3.png" alt="Carrinho" style="width: 20px;">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="/PS4/PS4.html">PS4</a></li>
+        <li class="breadcrumb-item active" aria-current="page">God of War</li>
+      </ol>
+    </nav>
+
+    <div class="game-details">
+      <div class="game-cover">
+        <img src="/IMGS - JOGOS/Capa - God of War.jpeg" alt="Capa God of War">
+      </div>
+      <div class="game-info">
+        <h2>God of War</h2>
+        <p>Desenvolvedora: Santa Monica Studio</p>
+        <div class="license-options">
+          <p>Tipo de Licença:</p>
+          <button class="btn" id="primaria" onclick="showDetails('primaria')">PS4 Primária</button>
+          <button class="btn" id="secundaria" onclick="showDetails('secundaria')">PS4 Secundária</button>
+          <button class="btn" id="aluguel" onclick="showDetails('aluguel')">Aluguel 10+1 dias - Secundaria</button>
+        </div>
+        <div id="detalhes-pagamento" class="detalhes-pagamento">
+          <div>A partir de R$ 29,99</div>
+          <div>Até 3x de R$ 10,00 sem juros ou R$ 28,99 via Pix</div>
+        </div>
+        <div class="wishlist">
+          <a href="/Lista de Desejos.html">
+            <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos">
+          </a>
+        </div>
+        <button id="btn-compra" class="btn-compra" disabled>Comprar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Rent Gamer. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
