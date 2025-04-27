@@ -10,7 +10,7 @@ Aprendizados
 
 * Demonstração de estrutura de páginas web com HTML.
 * Aplicação de estilos visuais com CSS.
-* Implementação de interatividade básica com JavaScript (se aplicável).
+* Implementação de interatividade com JavaScript.
 * Criação de uma interface de usuário para simular uma loja online.
 
 Feedback
