@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grand Theft Auto V - Rent Gamer</title>
+    <title>Animal Crossing: New Horizons - Rent Gamer</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -94,7 +94,7 @@
         }
 
         .license-options button.selected {
-            background-color: #1a237e;
+            background-color: #008080; /* Cor tema de Animal Crossing */
             color: white;
         }
 
@@ -124,8 +124,8 @@
         }
 
         .btn-compra {
-            background-color: #4caf50;
-            border-color: #4caf50;
+            background-color: #3cb371; /* Cor tema de Animal Crossing */
+            border-color: #3cb371;
             color: white;
             width: 50%;
             border-radius: 20px;
@@ -135,8 +135,8 @@
         }
 
         .btn-compra:disabled {
-            background-color: #a5d6a7;
-            border-color: #a5d6a7;
+            background-color: #8fbc8f;
+            border-color: #8fbc8f;
         }
 
         footer {
@@ -181,6 +181,7 @@
             margin-bottom: 5px;
         }
 
+        /* Estilos para o modal */
         .modal {
             display: none;
             position: fixed;
@@ -202,8 +203,7 @@
             border: 1px solid #888;
             border-radius: 5px;
             text-align: center;
-            /* Remova o width: 80%; */
-            max-width: 30%; /* Diminuindo ainda mais a largura máxima para 30% da tela */
+            max-width: 30%;
         }
 
         .modal-buttons {
@@ -240,63 +240,62 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="/PS4/PS4.html">PS4</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Grand Theft Auto V</li>
+                <li class="breadcrumb-item"><a href="/SWITCH/SWITCH.html">Nintendo Switch</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Animal Crossing: New Horizons</li>
             </ol>
         </nav>
 
         <div class="game-details">
             <div class="game-cover">
-                <img src="/IMGS - JOGOS/Capa - GTA-V PS4.jpeg" alt="Capa GTA V">
+                <img src="/IMGS - JOGOS/Capa - Animal Crossing New Horizons.jpg" alt="Capa Animal Crossing">
             </div>
             <div class="game-info">
-                <h2>Grand Theft Auto V</h2>
-                <p>Desenvolvedora: Rockstar Games</p>
+                <h2>Animal Crossing: New Horizons</h2>
+                <p>Desenvolvedora: Nintendo</p>
                 <div class="license-options">
                     <p>Tipo de Licença:</p>
-                    <button class="btn" id="primaria" onclick="mostrarDetalhes('primaria')">PS4 Primária</button>
-                    <button class="btn" id="secundaria" onclick="mostrarDetalhes('secundaria')">PS4 Secundária</button>
+                    <button class="btn" id="primaria" onclick="mostrarDetalhes('primaria')">Switch Primária</button>
+                    <button class="btn" id="secundaria" onclick="mostrarDetalhes('secundaria')">Switch Secundária</button>
                     <button class="btn" id="aluguel" onclick="mostrarDetalhes('aluguel')">Aluguel 11 dias - Secundária</button>
                 </div>
                 <div id="detalhes-pagamento" class="detalhes-pagamento">
-                    <div>A partir de R$ 19,99</div>
-                    <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
+                    <div>A partir de R$ 29,99</div>
+                    <div>Até 3x de R$ 10,00 sem juros ou R$ 28,49 via Pix</div>
                 </div>
                 <div class="wishlist">
                     <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos"
-                        onclick="adicionarÀListaDeDesejos({id: 'GTA_V', nome: 'Grand Theft Auto V', imagem: '/IMGS - JOGOS/Capa - GTA-V PS4.jpeg', link: '/wishlist.html'})">
+                        onclick="adicionarÀListaDeDesejos({id: 'ACNH', nome: 'Animal Crossing: New Horizons', imagem: '/IMGS - JOGOS/Capa - Animal Crossing New Horizons.jpg', link: '/wishlist.html'})">
                 </div>
-                <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="GTA_V"
-                    data-nome="Grand Theft Auto V" data-tipo="" data-preco="">Comprar</button>
+                <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="ACNH"
+                    data-nome="Animal Crossing: New Horizons" data-tipo="" data-preco="">Comprar</button>
             </div>
         </div>
 
         <h2>Detalhes do Produto</h2>
 
         <div class="game-banner">
-            <img src="/Banners/Banner GTA V.png" alt="Banner GTA V">
+            <img src="/Banners/Banner Animal Crossing.png" alt="Banner Animal Crossing">
         </div>
 
         <div class="product-details">
             <h1></h1>
-            <h5>SOBRE GRAND THEFT AUTO V</h5>
-            <p>Grand Theft Auto V, ou simplesmente GTA V, é um jogo de ação e aventura em mundo aberto desenvolvido pela
-                empresa britânica Rockstar North e publicado pela Rockstar Games no dia 17 de setembro de 2013 para os
-                videogames Playstation 3 e Xbox 360. Uma versão melhorada do game foi lançada para Playstation 4 e Xbox
-                One em 18 de novembro de 2014 e para computadores foi lançada no dia 14 de abril de 2015. É o décimo
-                quinto jogo da série Grand Theft Auto (incluindo as expansões) desde Grand Theft Auto IV (2008) e a
-                continuação do universo fictício que foi introduzido neste jogo.</p>
+            <h5>SOBRE ANIMAL CROSSING: NEW HORIZONS</h5>
+            <p>Fuja para uma ilha deserta e crie seu próprio paraíso enquanto explora, cria e personaliza. Sua vida
+                insular tem um potencial incrível. Chegue e comece sua nova vida. Colete materiais para construir tudo,
+                desde móveis até ferramentas! Em seguida, use o que você cria para personalizar sua ilha. Crie laços com
+                os residentes enquanto desfruta da vida insular, onde cada dia é cheio de novas surpresas e descobertas.
+            </p>
 
             <h1></h1>
             <h4>ESPECIFICAÇÕES TÉCNICAS:</h4>
             <ul>
-                <li>Plataforma: Playstation 4</li>
-                <li>Gênero: Ação</li>
-                <li>Produtora: Rockstar</li>
-                <li>Idioma: Inglês</li>
-                <li>Legenda: Português</li>
-                <li>Tamanho: 44.9 GB</li>
-                <li>Data de Lançamento: 18/11/2014</li>
+                <li>Plataforma: Nintendo Switch</li>
+                <li>Gênero: Simulação</li>
+                <li>Produtora: Nintendo</li>
+                <li>Idioma: Inglês, Japonês, Francês, Alemão, Italiano, Espanhol, Coreano, Chinês</li>
+                <li>Legenda: Português (Brasil)</li>
+                <li>Tamanho: 6.2 GB</li>
+                <li>Data de Lançamento: 20/03/2020</li>
             </ul>
         </div>
     </div>
@@ -342,16 +341,16 @@
 
         const detalhesLicenca = {
             primaria: {
-                price: 'R$ 99,99',
-                installments: 'Até 3x de R$ 33,33 sem juros ou R$ 98,99 via Pix'
+                price: 'R$ 129,99',
+                installments: 'Até 3x de R$ 43,33 sem juros ou R$ 123,49 via Pix'
             },
             secundaria: {
-                price: 'R$ 59,99',
-                installments: 'Até 3x de R$ 19,99 sem juros ou R$ 58,99 via Pix'
+                price: 'R$ 79,99',
+                installments: 'Até 3x de R$ 26,66 sem juros ou R$ 75,99 via Pix'
             },
             aluguel: {
-                price: 'R$ 19,99',
-                installments: 'Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix'
+                price: 'R$ 29,99',
+                installments: 'Até 3x de R$ 10,00 sem juros ou R$ 28,49 via Pix'
             }
         };
 
@@ -389,7 +388,7 @@
                 alert(`${jogo.nome} já está na sua lista de desejos!`);
             } else {
                 jogo.preco = preco;
-                jogo.comprarLink = '/Games/GTA V.html'; // Redireciona direto para a lista ao clicar em "Ver Lista"
+                jogo.comprarLink = '/Games/Animal Crossing New Horizons.html'; // Redireciona direto para a página do jogo
                 listaDesejos.push(jogo);
                 localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
                 openWishlistModal();

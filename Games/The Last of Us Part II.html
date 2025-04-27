@@ -2,270 +2,465 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Last of Us Part II - Rent Gamer</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    body {
-      background-color: #fff;
-      color: #000;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Last of Us Part II - Rent Gamer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+        }
 
-    .navbar {
-      background-color: #1a237e;
-    }
+        .navbar {
+            background-color: #1a237e;
+        }
 
-    .navbar-brand img {
-      width: 100px;
-      height: 100px;
-      margin-right: 10px;
-    }
+        .navbar-brand img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
 
-    .navbar-brand,
-    .nav-link {
-      color: #fff !important;
-    }
+        .navbar-brand,
+        .nav-link {
+            color: #fff !important;
+        }
 
-    .container {
-      margin-top: 20px;
-    }
+        .container {
+            margin-top: 20px;
+        }
 
-    .game-details {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
+        .game-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
-    .game-cover {
-      flex: 1;
-      max-width: 300px;
-      margin-right: 20px;
-    }
+        .game-cover {
+            flex: 1;
+            max-width: 300px;
+            margin-right: 20px;
+        }
 
-    .game-cover img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
-    }
+        .game-cover img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
 
-    .game-info {
-      flex: 2;
-      display: flex;
-      flex-direction: column;
-    }
+        .game-info {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .game-info h2 {
-      margin-bottom: 10px;
-    }
+        .game-info h2 {
+            margin-bottom: 10px;
+        }
 
-    .game-info p {
-      margin-bottom: 5px;
-    }
+        .game-info p {
+            margin-bottom: 5px;
+        }
 
-    .breadcrumb {
-      background: none;
-      padding: 0;
-      margin-bottom: 20px;
-    }
+        .breadcrumb {
+            background: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
 
-    .breadcrumb-item+.breadcrumb-item::before {
-      content: ">";
-    }
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: ">";
+        }
 
-    .license-options {
-      margin-top: 20px;
-    }
+        .license-options {
+            margin-top: 20px;
+        }
 
-    .license-options button {
-      margin: 0 5px 10px 0;
-      background-color: white;
-      color: black;
-      border: 1px solid #ccc;
-      border-radius: 20px;
-      width: auto;
-      font-size: 0.9em;
-      padding: 10px 15px;
-    }
+        .license-options button {
+            width: 150px;
+            /* Define uma largura fixa para os botões */
+            height: 50px;
+            /* Define uma altura fixa para os botões */
+            background-color: white;
+            color: black;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            /* Ajusta os cantos arredondados */
+            font-size: 0.9em;
+            padding: 10px 15px;
+            /* Pode ajustar conforme necessário */
+            margin: 0 5px 10px 0;
+        }
 
-    .license-options button:hover {
-      background-color: #f0f0f0;
-    }
+        .license-options button:hover {
+            background-color: #f0f0f0;
+        }
 
-    .license-options button.selected {
-      background-color: #1a237e;
-      color: white;
-    }
+        .license-options button.selected {
+            background-color: #1a237e;
+            color: white;
+        }
 
-    .detalhes-pagamento {
-      margin-top: 10px;
-      font-size: 1.1em;
-    }
+        .detalhes-pagamento {
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
 
-    .wishlist {
-      text-align: left;
-      margin-top: 10px;
-    }
+        .detalhes-pagamento div {
+            margin-bottom: 5px;
+        }
 
-    .wishlist img {
-      width: 24px;
-      height: 24px;
-      cursor: pointer;
-    }
+        .highlight-price {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
 
-    .btn-compra {
-      background-color: #4caf50;
-      border-color: #4caf50;
-      color: white;
-      width: 50%;
-      border-radius: 20px;
-      margin-top: 10px;
-      font-size: 1.2em;
-      padding: 15px;
-    }
+        .wishlist {
+            text-align: left;
+            margin-top: 10px;
+        }
 
-    .btn-compra:disabled {
-      background-color: #a5d6a7;
-      border-color: #a5d6a7;
-    }
+        .wishlist img {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
 
-    footer {
-      background-color: #1a237e;
-      color: #fff;
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 40px;
-    }
-  </style>
-  <script>
-    function showDetails(type) {
-      let detailsText = '';
+        .btn-compra {
+            background-color: #4caf50;
+            border-color: #4caf50;
+            color: white;
+            width: 50%;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-size: 1.2em;
+            padding: 15px;
+        }
 
-      switch (type) {
-        case 'primaria':
-          detailsText = `
-            <div>Licença Primária: R$ 49,99</div>
-            <div>Até 3x de R$ 16,66 sem juros ou R$ 47,49 via Pix</div>
-          `;
-          break;
-        case 'secundaria':
-          detailsText = `
-            <div>Licença Secundária: R$ 39,99</div>
-            <div>Até 3x de R$ 13,33 sem juros ou R$ 37,99 via Pix</div>
-          `;
-          break;
-        case 'aluguel':
-          detailsText = `
-            <div>Aluguel: R$ 19,99</div>
-            <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
-          `;
-          break;
-      }
+        .btn-compra:disabled {
+            background-color: #a5d6a7;
+            border-color: #a5d6a7;
+        }
 
-      document.getElementById('detalhes-pagamento').innerHTML = detailsText;
+        footer {
+            background-color: #1a237e;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
 
-      let buttons = document.querySelectorAll('.license-options button');
-      buttons.forEach(button => {
-        button.classList.remove('selected');
-      });
+        .game-banner {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
 
-      document.getElementById(type).classList.add('selected');
+        .game-banner img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
 
-      document.getElementById('btn-compra').disabled = false;
-    }
+        .product-details {
+            margin-top: 40px;
+        }
 
-    function handlePurchaseClick(event) {
-      if (document.getElementById('btn-compra').disabled) {
-        event.preventDefault();
-        alert('Por favor, selecione o tipo de licença antes de comprar.');
-      }
-    }
+        .product-details h3 {
+            margin-bottom: 20px;
+        }
 
-    document.addEventListener('DOMContentLoaded', function () {
-      document.getElementById('btn-compra').addEventListener('click', handlePurchaseClick);
-    });
-  </script>
+        .product-details p,
+        .product-details ul {
+            margin-bottom: 10px;
+        }
+
+        .product-details ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .product-details ul li {
+            margin-bottom: 5px;
+        }
+
+        /* Estilos para o modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-buttons {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .modal-buttons button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .modal-buttons button.close-modal-btn {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .modal-buttons button.view-wishlist-btn {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div id="header"></div>
+
     <div class="container">
-      <a class="navbar-brand" href="/index.html">
-        <img src="/Logo RentGamer.png" alt="Rent Gamer Logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <form class="form-inline mx-auto">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar jogos" aria-label="Buscar">
-        </form>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="login.html">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Lista de Desejos.html">
-              <img src="/IMGS - ICONES/lista_de_desejos-branco.png" alt="Lista de Desejos" style="width: 20px;">
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cart.html">
-              <img src="/IMGS - ICONES/carrinho-branco3.png" alt="Carrinho" style="width: 20px;">
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="/PS4/PS4.html">PS4</a></li>
+                <li class="breadcrumb-item active" aria-current="page">The Last of Us Part II</li>
+            </ol>
+        </nav>
 
-  <div class="container">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/PS4/PS4.html">PS4</a></li>
-        <li class="breadcrumb-item active" aria-current="page">The Last of Us Part II</li>
-      </ol>
-    </nav>
-
-    <div class="game-details">
-      <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - The Last of Us Part II.jpeg" alt="Capa The Last of Us Part II">
-      </div>
-      <div class="game-info">
-        <h2>The Last of Us Part II</h2>
-        <p>Desenvolvedora: Naughty Dog</p>
-        <div class="license-options">
-          <p>Tipo de Licença:</p>
-          <button class="btn" id="primaria" onclick="showDetails('primaria')">PS4 Primária</button>
-          <button class="btn" id="secundaria" onclick="showDetails('secundaria')">PS4 Secundária</button>
-          <button class="btn" id="aluguel" onclick="showDetails('aluguel')">Aluguel 10+1 dias - Secundaria</button>
+        <div class="game-details">
+            <div class="game-cover">
+                <img src="/IMGS - JOGOS/Capa - The Last of Us Part II.jpeg" alt="Capa The Last of Us Part II">
+            </div>
+            <div class="game-info">
+                <h2>The Last of Us Part II</h2>
+                <p>Desenvolvedora: Naughty Dog</p>
+                <div class="license-options">
+                    <p>Tipo de Licença:</p>
+                    <button class="btn" id="primaria" onclick="mostrarDetalhes('primaria')">PS4 Primária</button>
+                    <button class="btn" id="secundaria" onclick="mostrarDetalhes('secundaria')">PS4 Secundária</button>
+                    <button class="btn" id="aluguel" onclick="mostrarDetalhes('aluguel')">Aluguel 11 dias -
+                        Secundária</button>
+                </div>
+                <div id="detalhes-pagamento" class="detalhes-pagamento">
+                    <div>A partir de R$ 19,99</div>
+                    <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
+                </div>
+                <div class="wishlist">
+                    <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos"
+                        onclick="adicionarÀListaDeDesejos({id: 'TLOU2', nome: 'The Last of Us Part II', imagem: '/IMGS - JOGOS/Capa - The Last of Us Part II.jpeg', link: '/Games/The Last of Us Part II.html'})">
+                </div>
+                <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="TLOU2"
+                    data-nome="The Last of Us Part II" data-tipo="" data-preco="">Comprar</button>
+            </div>
         </div>
-        <div id="detalhes-pagamento" class="detalhes-pagamento">
-          <div>A partir de R$ 19,99</div>
-          <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
-        </div>
-        <div class="wishlist">
-          <a href="/Lista de Desejos.html">
-            <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos">
-          </a>
-        </div>
-        <button id="btn-compra" class="btn-compra" disabled>Comprar</button>
-      </div>
-    </div>
-  </div>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2024 Rent Gamer. Todos os direitos reservados.</p>
-    </div>
-  </footer>
+        <h2>Detalhes do Produto</h2>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <div class="game-banner">
+            <img src="" alt="Banner The Last of Us Part II">
+        </div>
+
+        <div class="product-details">
+            <h1></h1>
+            <h5>SOBRE THE LAST OF US PART II</h5>
+            <p>Cinco anos após sua jornada perigosa pelos Estados Unidos pós-pandêmicos, Ellie e Joel se estabeleceram em
+                Jackson, Wyoming. Viver em uma comunidade próspera de sobreviventes lhes proporcionou paz e estabilidade,
+                apesar da ameaça constante dos infectados e de outros sobreviventes mais desesperados. Quando um evento
+                violento interrompe essa paz, Ellie embarca em uma jornada implacável para fazer justiça e encontrar o
+                acerto de contas. Enquanto ela caça os responsáveis um por um, é confrontada com as consequências físicas e
+                emocionais devastadoras de suas ações.</p>
+
+            <h1></h1>
+            <h4>ESPECIFICAÇÕES TÉCNICAS:</h4>
+            <ul>
+                <li>Plataforma: Playstation 4</li>
+                <li>Gênero: Ação, Aventura, Terror de sobrevivência</li>
+                <li>Produtora: Naughty Dog</li>
+                <li>Idioma: Português</li>
+                <li>Legenda: Português</li>
+                <li>Tamanho: 100 GB (aproximado)</li>
+                <li>Data de Lançamento: 19/06/2020</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="wishlistModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeWishlistModal()">&times;</span>
+            <p>O jogo foi adicionado à sua lista de desejos!</p>
+            <div class="modal-buttons">
+                <button class="close-modal-btn" onclick="closeWishlistModal()">Fechar</button>
+                <button class="view-wishlist-btn" onclick="goToWishlist()">Ver Lista de Desejos</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        // Carregar o header
+        fetch('/Header.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar o header');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            })
+            .catch(error => console.error(error));
+
+        // Carregar o footer
+        fetch('/Footer.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar o footer');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => console.error(error));
+
+        const detalhesLicenca = {
+            primaria: {
+                price: 'R$ 99,99',
+                installments: 'Até 3x de R$ 33,33 sem juros ou R$ 98,99 via Pix'
+            },
+            secundaria: {
+                price: 'R$ 59,99',
+                installments: 'Até 3x de R$ 19,99 sem juros ou R$ 58,99 via Pix'
+            },
+            aluguel: {
+                price: 'R$ 19,99',
+                installments: 'Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix'
+            }
+        };
+
+        function mostrarDetalhes(tipoLicenca) {
+            const detalhes = detalhesLicenca[tipoLicenca];
+            if (detalhes) {
+                const detalhesPagamento = document.getElementById('detalhes-pagamento');
+                detalhesPagamento.innerHTML = `
+                    <div class="highlight-price">${detalhes.price}</div>
+                    <div>${detalhes.installments}</div>
+                `;
+
+                // Atualizando o botão de compra
+                const btnCompra = document.getElementById('btn-compra');
+                btnCompra.disabled = false;
+                btnCompra.setAttribute('data-tipo', tipoLicenca);
+                btnCompra.setAttribute('data-preco', detalhes.price);
+
+                // Remover seleção de outros botões
+                var buttons = document.querySelectorAll('.license-options button');
+                buttons.forEach(function(button) {
+                    button.classList.remove('selected');
+                });
+                document.getElementById(tipoLicenca).classList.add('selected');
+            }
+        }
+
+        function adicionarÀListaDeDesejos(jogo) {
+            const listaDesejos = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            // Verifica se o jogo já está na lista de desejos
+            const jogoExistente = listaDesejos.find(item => item.id === jogo.id);
+
+            if (jogoExistente) {
+                alert(`${jogo.nome} já está na sua lista de desejos!`);
+            } else {
+                // Adicionando o link da página de compra ao objeto 'jogo'
+                jogo.comprarLink = '/Games/The Last of Us Part II.html'; // Altere para o link de compra correto
+                listaDesejos.push(jogo);
+                localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
+                openWishlistModal();
+            }
+        }
+
+        function comprarJogo() {
+            const btnCompra = document.getElementById('btn-compra');
+            const selectedLicenseType = btnCompra.dataset.tipo;
+            const jogoId = btnCompra.dataset.id;
+            const jogoNome = btnCompra.dataset.nome;
+            const jogoPreco = btnCompra.dataset.preco;
+
+            if (selectedLicenseType) {
+                // Verifica se o jogo já está no carrinho
+                if (verificarDuplicidade(jogoNome)) {
+                    alert(`${jogoNome} já está no carrinho!`);
+                } else {
+                    // Redireciona para a página do carrinho, passando os dados
+                    window.location.href = `/carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
+                }
+            }
+        }
+
+        // Função para verificar se o produto já está no carrinho
+        function verificarDuplicidade(nome) {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            return carrinho.some(item => item.nome === nome);
+        }
+
+        // Funções para o modal da lista de desejos
+        function openWishlistModal() {
+            document.getElementById('wishlistModal').style.display = "block";
+        }
+
+        function closeWishlistModal() {
+            document.getElementById('wishlistModal').style.display = "none";
+        }
+
+        function goToWishlist() {
+            window.location.href = '/Lista de Desejos.html';
+        }
+
+        // Fechar o modal se o usuário clicar fora dele
+        window.onclick = function(event) {
+            const modal = document.getElementById('wishlistModal');
+            if (event.target == modal) {
+                closeWishlistModal();
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>

@@ -1,136 +1,256 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+ <html lang="pt-BR">
+ 
 
-<head>
+ <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lista de Desejos - Rent Gamer</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-    body {
-      background-color: #fff;
-      color: #000;
-    }
+  body {
+  background-color: #f8f9fa;
+  color: #343a40;
+  }
+ 
 
-    .container {
-      margin-top: 20px;
-    }
+  .navbar {
+  background-color: #1a237e;
+  }
+ 
 
-    .wishlist-table {
-      width: 100%;
-      margin-top: 20px;
-    }
+  .navbar-brand img {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  }
+ 
 
-    .wishlist-table th,
-    .wishlist-table td {
-      text-align: center;
-    }
+  .navbar-brand,
+  .nav-link {
+  color: #fff !important;
+  }
+ 
 
-    .wishlist-table th {
-      background-color: #1a237e;
-      color: #fff;
-    }
+  .container {
+  margin-top: 20px;
+  }
+ 
 
-    .wishlist-table td img {
-      width: 100px;
-      height: auto;
-      border-radius: 5px;
-    }
+  h2 {
+  margin-bottom: 20px;
+  color: #1a237e;
+  }
+ 
 
-    .wishlist-table .remove-btn {
-      background-color: #f44336;
-      color: #fff;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+  .wishlist-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  }
+ 
 
-    .wishlist-table .remove-btn:hover {
-      background-color: #d32f2f;
-    }
+  .wishlist-item img {
+  max-width: 80px;
+  height: auto;
+  margin-right: 15px;
+  border-radius: 5px;
+  }
+ 
+
+  .item-details {
+  flex-grow: 1;
+  }
+ 
+
+  .item-details h5 {
+  margin-bottom: 5px;
+  font-weight: bold;
+  }
+ 
+
+  .item-details p {
+  margin-bottom: 3px;
+  font-size: 0.9em;
+  }
+ 
+
+  .item-actions button {
+  margin-left: 10px;
+  }
+ 
+
+  .btn-comprar {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 0.9em;
+  }
+ 
+
+  .btn-comprar:hover {
+  background-color: #218838;
+  }
+ 
+
+  .btn-excluir {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 0.9em;
+  }
+ 
+
+  .btn-excluir:hover {
+  background-color: #c82333;
+  }
+ 
+
+  .empty-wishlist {
+  text-align: center;
+  color: #6c757d;
+  }
+ 
+
+  footer {
+  background-color: #1a237e;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  }
   </style>
-</head>
+ </head>
+ 
 
-<body>
+ <body>
+ 
 
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1a237e;">
-    <div class="container">
-      <a class="navbar-brand" href="/index.html">
-        <img src="/Logo RentGamer.png" alt="Rent Gamer Logo" style="width: 100px; height: 100px; margin-right: 10px;">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <form class="form-inline mx-auto">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar jogos" aria-label="Buscar">
-        </form>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="login.html">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Lista de Desejos.html">
-              <img src="/IMGS - ICONES/lista_de_desejos-branco.png" alt="Lista de Desejos" style="width: 20px;">
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cart.html">
-              <img src="/IMGS - ICONES/carrinho-branco3.png" alt="Carrinho" style="width: 20px;">
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <div id="header"></div>
+ 
 
   <div class="container">
-    <h1>Lista de Desejos</h1>
-
-    <table class="table wishlist-table">
-      <thead>
-        <tr>
-          <th>Imagem</th>
-          <th>Nome do Jogo</th>
-          <th>Ação</th>
-        </tr>
-      </thead>
-      <tbody id="wishlist-container">
-        <!-- Itens da lista de desejos serão carregados aqui -->
-      </tbody>
-    </table>
+  <h2>Sua Lista de Desejos</h2>
+  <div id="wishlist-container">
+  <p class="empty-wishlist">Sua lista de desejos está vazia.</p>
   </div>
+  </div>
+ 
+
+  <div id="footer"></div>
+ 
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const wishlistContainer = document.getElementById('wishlist-container');
-      const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  // Carregar o header
+  fetch('/Header.html')
+  .then(response => {
+  if (!response.ok) {
+  throw new Error('Erro ao carregar o header');
+  }
+  return response.text();
+  })
+  .then(data => {
+  document.getElementById('header').innerHTML = data;
+  })
+  .catch(error => console.error(error));
+ 
 
-      if (wishlist.length > 0) {
-        wishlist.forEach(item => {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-            <td><img src="/path/to/image/${item.image}" alt="${item.name}"></td>
-            <td>${item.name}</td>
-            <td><button class="remove-btn" onclick="removeFromWishlist('${item.name}')">Remover</button></td>
-          `;
-          wishlistContainer.appendChild(row);
-        });
-      } else {
-        wishlistContainer.innerHTML = '<tr><td colspan="3" class="text-center">Sua lista de desejos está vazia.</td></tr>';
-      }
-    });
+  // Carregar o footer
+  fetch('/Footer.html')
+  .then(response => {
+  if (!response.ok) {
+  throw new Error('Erro ao carregar o footer');
+  }
+  return response.text();
+  })
+  .then(data => {
+  document.getElementById('footer').innerHTML = data;
+  })
+  .catch(error => console.error(error));
+ 
 
-    function removeFromWishlist(name) {
-      let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-      wishlist = wishlist.filter(item => item.name !== name);
-      localStorage.setItem('wishlist', JSON.stringify(wishlist));
-      location.reload(); // Atualiza a página para refletir a remoção
-    }
+  function carregarListaDeDesejos() {
+  const wishlistContainer = document.getElementById('wishlist-container');
+  wishlistContainer.innerHTML = ''; // Limpa o container
+
+  const listaDesejos = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+  if (listaDesejos.length === 0) {
+  wishlistContainer.innerHTML = '<p class="empty-wishlist">Sua lista de desejos está vazia.</p>';
+  return;
+  }
+
+  listaDesejos.forEach(jogo => {
+  const itemDiv = document.createElement('div');
+  itemDiv.classList.add('wishlist-item');
+
+  const capaImg = document.createElement('img');
+  capaImg.src = jogo.imagem;
+  capaImg.alt = `Capa de ${jogo.nome}`;
+
+  const detalhesDiv = document.createElement('div');
+  detalhesDiv.classList.add('item-details');
+
+  const nomeH5 = document.createElement('h5');
+  nomeH5.textContent = jogo.nome;
+
+  detalhesDiv.appendChild(nomeH5);
+
+  const actionsDiv = document.createElement('div');
+  actionsDiv.classList.add('item-actions');
+
+  const comprarButton = document.createElement('button');
+  comprarButton.classList.add('btn', 'btn-comprar');
+  comprarButton.innerHTML = '<img src="/IMGS - ICONES/Icone Carrinho.png" alt="Comprar" style="width: 24px; height: 24px;">';
+  comprarButton.addEventListener('click', () => comprarJogoDaLista(jogo));
+
+  const excluirButton = document.createElement('button');
+  excluirButton.classList.add('btn', 'btn-excluir');
+  excluirButton.innerHTML = '<img src="/IMGS - ICONES/Icone Lixeira.png" alt="Excluir" style="width: 24px; height: 24px;">';
+  excluirButton.addEventListener('click', () => removerDaListaDeDesejos(jogo.id));
+
+  actionsDiv.appendChild(comprarButton);
+  actionsDiv.appendChild(excluirButton);
+
+  itemDiv.appendChild(capaImg);
+  itemDiv.appendChild(detalhesDiv);
+  itemDiv.appendChild(actionsDiv);
+
+  wishlistContainer.appendChild(itemDiv);
+  });
+ }
+
+  function removerDaListaDeDesejos(jogoId) {
+  let listaDesejos = JSON.parse(localStorage.getItem('wishlist')) || [];
+  listaDesejos = listaDesejos.filter(item => item.id !== jogoId);
+  localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
+  carregarListaDeDesejos(); // Recarrega a lista após a exclusão
+  }
+
+
+  function comprarJogoDaLista(jogo) {
+  alert(`Redirecionando para a compra de ${jogo.nome}...`);
+  window.location.href = jogo.comprarLink; // Se o link de compra correto estiver armazenado
+  }
+ 
+
+  // Carregar a lista de desejos quando a página for carregada
+  window.onload = carregarListaDeDesejos;
   </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ </body>
+ 
 
-</body>
-
-</html>
+ </html>
