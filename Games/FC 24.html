@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #f8f9fa;
-            color: #343a40;
+            background-color: #fff;
+            color: #000;
         }
 
         .navbar {
@@ -47,7 +47,6 @@
             max-width: 100%;
             height: auto;
             border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .game-info {
@@ -58,12 +57,10 @@
 
         .game-info h2 {
             margin-bottom: 10px;
-            color: #212529;
         }
 
         .game-info p {
             margin-bottom: 5px;
-            color: #495057;
         }
 
         .breadcrumb {
@@ -74,55 +71,36 @@
 
         .breadcrumb-item+.breadcrumb-item::before {
             content: ">";
-            color: #6c757d;
-        }
-
-        .breadcrumb-item a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .breadcrumb-item.active {
-            color: #6c757d;
         }
 
         .license-options {
             margin-top: 20px;
         }
 
-        .license-options p {
-            color: #212529;
-            margin-bottom: 10px;
-        }
-
         .license-options button {
             width: 150px;
             height: 50px;
             background-color: white;
-            color: #212529;
+            color: black;
             border: 1px solid #ccc;
             border-radius: 10px;
             font-size: 0.9em;
             padding: 10px 15px;
             margin: 0 5px 10px 0;
-            transition: background-color 0.3s ease;
         }
 
         .license-options button:hover {
-            background-color: #e9ecef;
-            border-color: #adb5bd;
+            background-color: #f0f0f0;
         }
 
         .license-options button.selected {
-            background-color: #007bff;
+            background-color: #1a237e;
             color: white;
-            border-color: #007bff;
         }
 
         .detalhes-pagamento {
             margin-top: 10px;
             font-size: 1.1em;
-            color: #28a745;
         }
 
         .detalhes-pagamento div {
@@ -146,25 +124,19 @@
         }
 
         .btn-compra {
-            background-color: #007bff;
-            border-color: #007bff;
+            background-color: #4caf50;
+            border-color: #4caf50;
             color: white;
             width: 50%;
             border-radius: 20px;
             margin-top: 10px;
             font-size: 1.2em;
             padding: 15px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-compra:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
         }
 
         .btn-compra:disabled {
-            background-color: #6c757d;
-            border-color: #6c757d;
+            background-color: #a5d6a7;
+            border-color: #a5d6a7;
         }
 
         footer {
@@ -185,23 +157,19 @@
             max-width: 100%;
             height: auto;
             border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .product-details {
             margin-top: 40px;
-            color: #212529;
         }
 
         .product-details h3 {
             margin-bottom: 20px;
-            color: #212529;
         }
 
         .product-details p,
         .product-details ul {
             margin-bottom: 10px;
-            color: #495057;
         }
 
         .product-details ul {
@@ -213,7 +181,6 @@
             margin-bottom: 5px;
         }
 
-        /* Estilos para o modal */
         .modal {
             display: none;
             position: fixed;
@@ -224,7 +191,6 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.4);
-            display: flex;
             justify-content: center;
             align-items: center;
         }
@@ -235,7 +201,8 @@
             border: 1px solid #888;
             border-radius: 5px;
             text-align: center;
-            max-width: 30%;
+            /* Remova o width: 80%; */
+            max-width: 30%; /* Diminuindo ainda mais a largura máxima para 30% da tela */
         }
 
         .modal-buttons {
@@ -250,7 +217,6 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 1em;
-            transition: background-color 0.3s ease;
         }
 
         .modal-buttons button.close-modal-btn {
@@ -280,7 +246,7 @@
 
         <div class="game-details">
             <div class="game-cover">
-                <img src="/IMGS - JOGOS/Capa - FC 24 PS5.jpeg" alt="Capa EA SPORTS FC 24">
+                <img src="/IMGS - JOGOS/Capa - FC 24.png" alt="Capa EA SPORTS FC 24">
             </div>
             <div class="game-info">
                 <h2>EA SPORTS FC 24</h2>
@@ -289,8 +255,7 @@
                     <p>Tipo de Licença:</p>
                     <button class="btn" id="primaria" onclick="mostrarDetalhes('primaria')">PS5 Primária</button>
                     <button class="btn" id="secundaria" onclick="mostrarDetalhes('secundaria')">PS5 Secundária</button>
-                    <button class="btn" id="aluguel" onclick="mostrarDetalhes('aluguel')">Aluguel 11 dias -
-                        Secundária</button>
+                    <button class="btn" id="aluguel" onclick="mostrarDetalhes('aluguel')">Aluguel 11 dias - Secundária</button>
                 </div>
                 <div id="detalhes-pagamento" class="detalhes-pagamento">
                     <div>A partir de R$ 49,99</div>
@@ -298,7 +263,7 @@
                 </div>
                 <div class="wishlist">
                     <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos"
-                        onclick="adicionarÀListaDeDesejos({id: 'FC_24', nome: 'EA SPORTS FC 24', imagem: '/IMGS - JOGOS/Capa - FC 24 PS5.jpeg', link: '/wishlist.html'})">
+                        onclick="adicionarÀListaDeDesejos({id: 'FC_24', nome: 'EA SPORTS FC 24', imagem: '/IMGS - JOGOS/Capa - FC 24.png', link: '/FC 24.html'})">
                 </div>
                 <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()"
                     data-id="FC_24" data-nome="EA SPORTS FC 24" data-tipo="" data-preco="">Comprar</button>
@@ -308,7 +273,7 @@
         <h2>Detalhes do Produto</h2>
 
         <div class="game-banner">
-            <img src="/Banners/Banner FC 24.png" alt="Banner EA SPORTS FC 24">
+            <img src="/Banners/Banner FC 24.jpg" alt="Banner EA SPORTS FC 24">
         </div>
 
         <div class="product-details">
@@ -392,8 +357,8 @@
             if (detalhes) {
                 const detalhesPagamento = document.getElementById('detalhes-pagamento');
                 detalhesPagamento.innerHTML = `
-                    <div class="highlight-price"><span class="math-inline">\{detalhes\.price\}</div\>
-<div\></span>{detalhes.installments}</div>
+                    <div class="highlight-price">${detalhes.price}</div>
+                    <div>${detalhes.installments}</div>
                 `;
 
                 // Atualizando o botão de compra
@@ -421,7 +386,7 @@
                 alert(`${jogo.nome} já está na sua lista de desejos!`);
             } else {
                 jogo.preco = preco;
-                jogo.comprarLink = '/Games/FC 24 PS5.html';
+                jogo.comprarLink = '/Games/FC 24.html';
                 listaDesejos.push(jogo);
                 localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
                 openWishlistModal();
@@ -439,7 +404,8 @@
                 if (verificarDuplicidade(jogoNome)) {
                     alert(`${jogoNome} já está no carrinho!`);
                 } else {
-                    window.location.href = `/carrinho.html?id=<span class="math-inline">\{jogoId\}&nome\=</span>{encodeURIComponent(jogoNome)}&tipo=<span class="math-inline">\{selectedLicenseType\}&preco\=</span>{encodeURIComponent(jogoPreco)}`;
+                    // Redireciona para a página do carrinho, passando os dados
+                    window.location.href = `/carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
                 }
             }
         }
@@ -450,7 +416,7 @@
         }
 
         function openWishlistModal() {
-            document.getElementById('wishlistModal').style.display = "block";
+            document.getElementById('wishlistModal').style.display = "flex";
         }
 
         function closeWishlistModal() {

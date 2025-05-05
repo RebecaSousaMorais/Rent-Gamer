@@ -94,7 +94,7 @@
         }
 
         .license-options button.selected {
-            background-color: #008080; /* Cor tema de Animal Crossing */
+            background-color: #1a237e;
             color: white;
         }
 
@@ -124,8 +124,8 @@
         }
 
         .btn-compra {
-            background-color: #3cb371; /* Cor tema de Animal Crossing */
-            border-color: #3cb371;
+            background-color: #4caf50;
+            border-color: #4caf50;
             color: white;
             width: 50%;
             border-radius: 20px;
@@ -135,8 +135,8 @@
         }
 
         .btn-compra:disabled {
-            background-color: #8fbc8f;
-            border-color: #8fbc8f;
+            background-color: #a5d6a7;
+            border-color: #a5d6a7;
         }
 
         footer {
@@ -181,7 +181,6 @@
             margin-bottom: 5px;
         }
 
-        /* Estilos para o modal */
         .modal {
             display: none;
             position: fixed;
@@ -192,7 +191,6 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.4);
-            display: flex;
             justify-content: center;
             align-items: center;
         }
@@ -203,7 +201,8 @@
             border: 1px solid #888;
             border-radius: 5px;
             text-align: center;
-            max-width: 30%;
+            /* Remova o width: 80%; */
+            max-width: 30%; /* Diminuindo ainda mais a largura máxima para 30% da tela */
         }
 
         .modal-buttons {
@@ -264,7 +263,7 @@
                 </div>
                 <div class="wishlist">
                     <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos"
-                        onclick="adicionarÀListaDeDesejos({id: 'ACNH', nome: 'Animal Crossing: New Horizons', imagem: '/IMGS - JOGOS/Capa - Animal Crossing New Horizons.jpg', link: '/wishlist.html'})">
+                        onclick="adicionarÀListaDeDesejos({id: 'ACNH', nome: 'Animal Crossing: New Horizons', imagem: '/IMGS - JOGOS/Capa - Animal Crossing New Horizons.jpg', link: '/Animal Crossing New Horizons.html'})">
                 </div>
                 <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="ACNH"
                     data-nome="Animal Crossing: New Horizons" data-tipo="" data-preco="">Comprar</button>
@@ -421,7 +420,7 @@
 
         // Funções para o modal da lista de desejos
         function openWishlistModal() {
-            document.getElementById('wishlistModal').style.display = "block";
+            document.getElementById('wishlistModal').style.display = "flex";
         }
 
         function closeWishlistModal() {

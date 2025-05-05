@@ -79,17 +79,13 @@
 
         .license-options button {
             width: 150px;
-            /* Define uma largura fixa para os botões */
             height: 50px;
-            /* Define uma altura fixa para os botões */
             background-color: white;
             color: black;
             border: 1px solid #ccc;
             border-radius: 10px;
-            /* Ajusta os cantos arredondados */
             font-size: 0.9em;
             padding: 10px 15px;
-            /* Pode ajustar conforme necessário */
             margin: 0 5px 10px 0;
         }
 
@@ -185,7 +181,6 @@
             margin-bottom: 5px;
         }
 
-        /* Estilos para o modal */
         .modal {
             display: none;
             position: fixed;
@@ -196,39 +191,27 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
         }
 
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 80%;
             border-radius: 5px;
-            position: relative;
-        }
-
-        .close-button {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close-button:hover,
-        .close-button:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
+            text-align: center;
+            /* Remova o width: 80%; */
+            max-width: 30%; /* Diminuindo ainda mais a largura máxima para 30% da tela */
         }
 
         .modal-buttons {
-            text-align: right;
+            text-align: center;
             margin-top: 20px;
         }
 
         .modal-buttons button {
-            margin-left: 10px;
+            margin: 0 10px;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
@@ -291,7 +274,7 @@
         <h2>Detalhes do Produto</h2>
 
         <div class="game-banner">
-            <img src="" alt="Banner The Last of Us Part II">
+            <img src="/Banners/Banner TLOU2.jpg" alt="Banner The Last of Us Part II">
         </div>
 
         <div class="product-details">
@@ -440,7 +423,7 @@
 
         // Funções para o modal da lista de desejos
         function openWishlistModal() {
-            document.getElementById('wishlistModal').style.display = "block";
+            document.getElementById('wishlistModal').style.display = "flex";
         }
 
         function closeWishlistModal() {
