@@ -238,15 +238,15 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="/Xbox One/XboxOne.html">Xbox One</a></li>
+                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="./Xbox One/XboxOne.html">Xbox One</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Forza Horizon 5</li>
             </ol>
         </nav>
 
         <div class="game-details">
             <div class="game-cover">
-                <img src="/IMGS - JOGOS/Capa - Forza Horizon 5.jpg" alt="Capa Forza Horizon 4">
+                <img src="./IMGS - JOGOS/Capa - Forza Horizon 5.jpg" alt="Capa Forza Horizon 4">
             </div>
             <div class="game-info">
                 <h2>Forza Horizon 5</h2>
@@ -262,8 +262,8 @@
                     <div>Até 3x de R$ 10,00 sem juros ou R$ 28,49 via Pix</div>
                 </div>
                 <div class="wishlist">
-                    <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos"
-                        onclick="adicionarÀListaDeDesejos({id: 'FH5', nome: 'Forza Horizon 5', imagem: '/IMGS - JOGOS/Capa - Forza Horizon 5.jpg', link: '/wishlist.html'})">
+                    <img src="./IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos"
+                        onclick="adicionarÀListaDeDesejos({id: 'FH5', nome: 'Forza Horizon 5', imagem: './IMGS - JOGOS/Capa - Forza Horizon 5.jpg', link: './Games/Forza Horizon 5.html'})">
                 </div>
                 <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="FH4"
                     data-nome="Forza Horizon 4" data-tipo="" data-preco="">Comprar</button>
@@ -273,7 +273,7 @@
         <h2>Detalhes do Produto</h2>
 
         <div class="game-banner">
-            <img src="/Banners/Banner FH5.jpg" alt="Banner Banner FH5">
+            <img src="./Banners/Banner FH5.jpg" alt="Banner Banner FH5">
         </div>
 
         <div class="product-details">
@@ -313,7 +313,7 @@
 
     <script>
         // Carregar o header
-        fetch('/Header.html')
+        fetch('./Header.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erro ao carregar o header');
@@ -326,7 +326,7 @@
             .catch(error => console.error(error));
 
         // Carregar o footer
-        fetch('/Footer.html')
+        fetch('./Footer.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erro ao carregar o footer');
@@ -387,7 +387,7 @@
                 alert(`${jogo.nome} já está na sua lista de desejos!`);
             } else {
                 jogo.preco = preco;
-                jogo.comprarLink = '/Games/Forza Horizon 5.html'; // Redireciona direto para a página do jogo
+                jogo.comprarLink = './Games/Forza Horizon 5.html'; // Redireciona direto para a página do jogo
                 listaDesejos.push(jogo);
                 localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
                 openWishlistModal();
@@ -407,7 +407,7 @@
                     alert(`${jogoNome} já está no carrinho!`);
                 } else {
                     // Redireciona para a página do carrinho, passando os dados
-                    window.location.href = `/carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
+                    window.location.href = `./carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
                 }
             }
         }
@@ -428,7 +428,7 @@
         }
 
         function goToWishlist() {
-            window.location.href = '/Lista de Desejos.html';
+            window.location.href = './Lista de Desejos.html';
         }
 
         // Fechar o modal se o usuário clicar fora dele

@@ -238,15 +238,15 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="/Xbox One/XboxOne.html">Xbox One</a></li>
+                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="./Xbox One/XboxOne.html">Xbox One</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Gears 5</li>
             </ol>
         </nav>
 
         <div class="game-details">
             <div class="game-cover">
-                <img src="/IMGS - JOGOS/Capa - Gears5.jpg" alt="Capa Gears 5">
+                <img src="./IMGS - JOGOS/Capa - Gears5.jpg" alt="Capa Gears 5">
             </div>
             <div class="game-info">
                 <h2>Gears 5</h2>
@@ -262,8 +262,8 @@
                     <div>Até 3x de R$ 13,33 sem juros ou R$ 37,99 via Pix</div>
                 </div>
                 <div class="wishlist">
-                    <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos"
-                         onclick="adicionarÀListaDeDesejos({id: 'xONEGears5', nome: 'Gears 5', imagem: '/IMGS - JOGOS/Capa - Gears5.jpg', link: '/Games/Gears 5  XONE.html'})">
+                    <img src="./IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos"
+                         onclick="adicionarÀListaDeDesejos({id: 'xONEGears5', nome: 'Gears 5', imagem: './IMGS - JOGOS/Capa - Gears5.jpg', link: './Games/Gears 5  XONE.html'})">
                 </div>
                  <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="xONEGears5"
                     data-nome="Gears 5" data-tipo="" data-preco="">Comprar</button>
@@ -273,7 +273,7 @@
         <h2>Detalhes do Produto</h2>
 
         <div class="game-banner">
-             <img src="/Banners/Banner Gears5.png" alt="Banner Gears 5">
+             <img src="./Banners/Banner Gears5.png" alt="Banner Gears 5">
         </div>
 
         <div class="product-details">
@@ -309,7 +309,7 @@
 
     <script>
         // Carregar o header
-        fetch('/Header.html')
+        fetch('./Header.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erro ao carregar o header');
@@ -322,7 +322,7 @@
             .catch(error => console.error(error));
 
         // Carregar o footer
-        fetch('/Footer.html')
+        fetch('./Footer.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erro ao carregar o footer');
@@ -382,7 +382,7 @@
                 // Salva o preço exibido NO MOMENTO de adicionar à lista
                 jogo.preco = precoAtualExibido;
                 // ATENÇÃO: Certifique-se que este link está correto
-                jogo.comprarLink = '/Games/Gears 5  XONE.html';
+                jogo.comprarLink = './Games/Gears 5  XONE.html';
                 listaDesejos.push(jogo);
                 localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
                 openWishlistModal();
@@ -396,13 +396,13 @@
             const selectedLicenseType = btnCompra.dataset.tipo;
             const jogoId = btnCompra.dataset.id;
             const jogoNome = btnCompra.dataset.nome;
-            const jogoPreco = btnCompra.dataset.preco; // Preço da licença selecionada
+            const jogoPreco = btnCompra.dataset.preco;
 
             if (selectedLicenseType) {
                 if (verificarDuplicidade(jogoNome)) {
                     alert(`${jogoNome} já está no carrinho!`);
                 } else {
-                    window.location.href = `/carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
+                    window.location.href = `./carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
                 }
             }
         }
@@ -421,7 +421,7 @@
             document.getElementById('wishlistModal').style.display = "none";
         }
         function goToWishlist() {
-            window.location.href = '/Lista de Desejos.html'; // Certifique-se que este é o caminho correto
+            window.location.href = './Lista de Desejos.html';
         }
         window.onclick = function(event) {
             const modal = document.getElementById('wishlistModal');

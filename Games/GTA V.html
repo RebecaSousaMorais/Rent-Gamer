@@ -238,15 +238,15 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="/PS4/PS4.html">PS4</a></li>
+                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="./PS4/PS4.html">PS4</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Grand Theft Auto V</li>
             </ol>
         </nav>
 
         <div class="game-details">
             <div class="game-cover">
-                <img src="/IMGS - JOGOS/Capa - GTA-V PS4.jpeg" alt="Capa GTA V">
+                <img src="./IMGS - JOGOS/Capa - GTA-V PS4.jpeg" alt="Capa GTA V">
             </div>
             <div class="game-info">
                 <h2>Grand Theft Auto V</h2>
@@ -262,8 +262,8 @@
                     <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
                 </div>
                 <div class="wishlist">
-                    <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos"
-                        onclick="adicionarÀListaDeDesejos({id: 'GTA_V', nome: 'Grand Theft Auto V', imagem: '/IMGS - JOGOS/Capa - GTA-V PS4.jpeg', link: '/wishlist.html'})">
+                    <img src="./IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos"
+                        onclick="adicionarÀListaDeDesejos({id: 'GTA_V', nome: 'Grand Theft Auto V', imagem: './IMGS - JOGOS/Capa - GTA-V PS4.jpeg', link: './Games/GTA V.html'})">
                 </div>
                 <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="GTA_V"
                     data-nome="Grand Theft Auto V" data-tipo="" data-preco="">Comprar</button>
@@ -314,7 +314,7 @@
 
     <script>
         // Carregar o header
-        fetch('/Header.html')
+        fetch('./Header.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erro ao carregar o header');
@@ -327,7 +327,7 @@
             .catch(error => console.error(error));
 
         // Carregar o footer
-        fetch('/Footer.html')
+        fetch('./Footer.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erro ao carregar o footer');
@@ -388,7 +388,7 @@
                 alert(`${jogo.nome} já está na sua lista de desejos!`);
             } else {
                 jogo.preco = preco;
-                jogo.comprarLink = '/Games/GTA V.html'; // Redireciona direto para a lista ao clicar em "Ver Lista"
+                jogo.comprarLink = './Games/GTA V.html'; // Redireciona direto para a lista ao clicar em "Ver Lista"
                 listaDesejos.push(jogo);
                 localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
                 openWishlistModal();
@@ -408,7 +408,7 @@
                     alert(`${jogoNome} já está no carrinho!`);
                 } else {
                     // Redireciona para a página do carrinho, passando os dados
-                    window.location.href = `/carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
+                    window.location.href = `./carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
                 }
             }
         }
@@ -429,7 +429,7 @@
         }
 
         function goToWishlist() {
-            window.location.href = '/Lista de Desejos.html';
+            window.location.href = './Lista de Desejos.html';
         }
 
         // Fechar o modal se o usuário clicar fora dele

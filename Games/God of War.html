@@ -238,15 +238,15 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/PS4/PS4.html">PS4</a></li>
+        <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="./PS4/PS4.html">PS4</a></li>
         <li class="breadcrumb-item active" aria-current="page">God of War</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - God of War.jpeg" alt="Capa God of War">
+        <img src="./IMGS - JOGOS/Capa - God of War.jpeg" alt="Capa God of War">
       </div>
       <div class="game-info">
         <h2>God of War</h2>
@@ -262,7 +262,7 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'GOW', nome: 'God of War', imagem: '/IMGS - JOGOS/Capa - God of War.jpeg', link: '/Games/God of War.html'})">
+          <img src="./IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'GOW', nome: 'God of War', imagem: './IMGS - JOGOS/Capa - God of War.jpeg', link: './Games/God of War.html'})">
         </div>
         <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="GOW" data-nome="God of War" data-tipo="" data-preco="">Comprar</button>
       </div>
@@ -274,7 +274,7 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner GOW.jpg" alt="Banner GOW">
+      <img src="./Banners/Banner GOW.jpg" alt="Banner GOW">
     </div>
 
     <!-- Detalhes do Produto -->
@@ -313,7 +313,7 @@
 
   <script>
     // Carregar o header
-    fetch('/Header.html')
+    fetch('./Header.html')
       .then(response => {
         if (!response.ok) {
           throw new Error('Erro ao carregar o header');
@@ -326,7 +326,7 @@
       .catch(error => console.error(error));
 
     // Carregar o footer
-    fetch('/Footer.html')
+    fetch('./Footer.html')
       .then(response => {
         if (!response.ok) {
           throw new Error('Erro ao carregar o footer');
@@ -385,7 +385,7 @@
                 // Salva o preço exibido NO MOMENTO de adicionar à lista
                 jogo.preco = precoAtualExibido;
                 // ATENÇÃO: Certifique-se que este link está correto
-                jogo.comprarLink = '/Games/God of War.html';
+                jogo.comprarLink = './Games/God of War.html';
                 listaDesejos.push(jogo);
                 localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
                 openWishlistModal();
@@ -405,7 +405,7 @@
                 if (verificarDuplicidade(jogoNome)) {
                     alert(`${jogoNome} já está no carrinho!`);
                 } else {
-                    window.location.href = `/carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
+                    window.location.href = `./carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
                 }
             }
         }
@@ -424,7 +424,7 @@
             document.getElementById('wishlistModal').style.display = "none";
         }
         function goToWishlist() {
-            window.location.href = '/Lista de Desejos.html'; // Certifique-se que este é o caminho correto
+            window.location.href = './Lista de Desejos.html'; // Certifique-se que este é o caminho correto
         }
         window.onclick = function(event) {
             const modal = document.getElementById('wishlistModal');

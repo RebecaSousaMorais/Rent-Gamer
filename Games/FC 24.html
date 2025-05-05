@@ -273,7 +273,7 @@
         <h2>Detalhes do Produto</h2>
 
         <div class="game-banner">
-            <img src="/Banners/Banner FC 24.jpg" alt="Banner EA SPORTS FC 24">
+            <img src="./Banners/Banner FC 24.jpg" alt="Banner EA SPORTS FC 24">
         </div>
 
         <div class="product-details">
@@ -312,7 +312,7 @@
 
     <script>
         // Carregar o header
-        fetch('/Header.html')
+        fetch('./Header.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erro ao carregar o header');
@@ -325,7 +325,7 @@
             .catch(error => console.error(error));
 
         // Carregar o footer
-        fetch('/Footer.html')
+        fetch('./Footer.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erro ao carregar o footer');
@@ -386,7 +386,7 @@
                 alert(`${jogo.nome} já está na sua lista de desejos!`);
             } else {
                 jogo.preco = preco;
-                jogo.comprarLink = '/Games/FC 24.html';
+                jogo.comprarLink = './Games/FC 24.html';
                 listaDesejos.push(jogo);
                 localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
                 openWishlistModal();
@@ -405,7 +405,7 @@
                     alert(`${jogoNome} já está no carrinho!`);
                 } else {
                     // Redireciona para a página do carrinho, passando os dados
-                    window.location.href = `/carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
+                    window.location.href = `./carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
                 }
             }
         }

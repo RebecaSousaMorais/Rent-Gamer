@@ -262,8 +262,8 @@
                     <div>Até 3x de R$ 13,33 sem juros ou R$ 37,99 via Pix</div>
                 </div>
                 <div class="wishlist">
-                    <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos"
-                         onclick="adicionarÀListaDeDesejos({id: 'xSeriesHI', nome: 'Halo Infinite', imagem: '/IMGS - JOGOS/Capa - Halo Infinite.jpeg', link: '/Games/Halo Infinite.html'})">
+                    <img src="./IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos"
+                         onclick="adicionarÀListaDeDesejos({id: 'xSeriesHI', nome: 'Halo Infinite', imagem: './IMGS - JOGOS/Capa - Halo Infinite.jpeg', link: './Games/Halo Infinite.html'})">
                 </div>
                  <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="xONEHG5"
                     data-nome="Gears 5" data-tipo="" data-preco="">Comprar</button>
@@ -273,7 +273,7 @@
         <h2>Detalhes do Produto</h2>
 
         <div class="game-banner">
-             <img src="/Banners/Banner Halo Infinite.jpg" alt="Banner Halo Infinite">
+             <img src="./Banners/Banner Halo Infinite.jpg" alt="Banner Halo Infinite">
         </div>
 
         <div class="product-details">
@@ -308,7 +308,7 @@
 
     <script>
         // Carregar o header
-        fetch('/Header.html')
+        fetch('./Header.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erro ao carregar o header');
@@ -321,7 +321,7 @@
             .catch(error => console.error(error));
 
         // Carregar o footer
-        fetch('/Footer.html')
+        fetch('./Footer.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erro ao carregar o footer');
@@ -401,7 +401,7 @@
                 if (verificarDuplicidade(jogoNome)) {
                     alert(`${jogoNome} já está no carrinho!`);
                 } else {
-                    window.location.href = `/carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
+                    window.location.href = `./carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
                 }
             }
         }
@@ -420,7 +420,7 @@
             document.getElementById('wishlistModal').style.display = "none";
         }
         function goToWishlist() {
-            window.location.href = '/Lista de Desejos.html'; // Certifique-se que este é o caminho correto
+            window.location.href = './Lista de Desejos.html'; // Certifique-se que este é o caminho correto
         }
         window.onclick = function(event) {
             const modal = document.getElementById('wishlistModal');
