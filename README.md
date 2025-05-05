@@ -1,4 +1,6 @@
-![Logo RentGamer](./Logo-RentGamer.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/RebecaSousaMorais/Rent-Gamer/main/Logo-RentGamer.png" alt="Logo RentGamer" width="200">
+</p>
 
 # RENTGAMER
 
