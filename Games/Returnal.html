@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>God of War - Rent Gamer</title>
+  <title>Returnal - Rent Gamer</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
@@ -239,22 +239,22 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/PS4/PS4.html">PS4</a></li>
-        <li class="breadcrumb-item active" aria-current="page">God of War</li>
+        <li class="breadcrumb-item"><a href="/PS5/PS5.html">PS5</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Returnal</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - God of War.jpeg" alt="Capa God of War">
+        <img src="/IMGS - JOGOS/Capa - Returnal.jpg" alt="Capa Returnal">
       </div>
       <div class="game-info">
-        <h2>God of War</h2>
-        <p>Desenvolvedora: Santa Mônica Studio</p>
+        <h2>Returnal</h2>
+        <p>Desenvolvedora:  Sony Interactive Entertainment</p>
         <div class="license-options">
           <p>Tipo de Licença:</p>
-          <button class="btn" id="primaria" onclick="mostrarDetalhes('primaria')">PS4 Primária</button>
-          <button class="btn" id="secundaria" onclick="mostrarDetalhes('secundaria')">PS4 Secundária</button>
+          <button class="btn" id="primaria" onclick="mostrarDetalhes('primaria')">PS5 Primária</button>
+          <button class="btn" id="secundaria" onclick="mostrarDetalhes('secundaria')">PS5 Secundária</button>
           <button class="btn" id="aluguel" onclick="mostrarDetalhes('aluguel')">Aluguel 11 dias - Secundária</button>
         </div>
         <div id="detalhes-pagamento" class="detalhes-pagamento">
@@ -262,9 +262,9 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'GOW', nome: 'God of War', imagem: '/IMGS - JOGOS/Capa - God of War.jpeg', link: '/Games/God of War.html'})">
+          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'RET', nome: 'Returnal', imagem: '/IMGS - JOGOS/Capa - Returnal.jpg ', link: '/Games/Returnal.html'})">
         </div>
-        <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="GOW" data-nome="God of War" data-tipo="" data-preco="">Comprar</button>
+        <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="RET" data-nome="Returnal" data-tipo="" data-preco="">Comprar</button>
       </div>
     </div>
 
@@ -274,27 +274,25 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner GOW.jpg" alt="Banner GOW">
+      <img src="/Banners/Banner Returnal.jpg" alt="Banner Returnal">
     </div>
 
     <!-- Detalhes do Produto -->
     <div class="product-details">
       <h1></h1>
-      <h5>SOBRE GOD OF WAR</h5>
-      <p>Sua vingança contra os deuses do Olimpo agora é passado, em God of War, Kratos vive como um homem comum nas terras dos deuses Nórdicos, ensinando seu filho a sobreviver a todos os perigos que aparecerem por sua frente. Kratos está empenhado em passar todos seus conhecimentos ao seu filho, que está determinado a conquistar o respeito de seu pai. Finalmente o assassino de deuses tem a oportunidade de corrigir seus erros do passado xpre.
-
-        God of War traz um cenário totalmente diferente dos jogos anteriores, repleto de florestas e áreas montanhosas, repleto de criaturas e deuses da mitologia nórdica. Kratos agora possui um machado poderoso e mágico que traz muita ação no combate corpo a corpo. Além de possuir outros armamentos que fazem com que este grande guerreiro torne-se ainda mais poderoso e destrutivo.</p>
+      <h5>SOBRE RETURNAL</h5>
+      <p>QUEBRE O CICLO Após uma queda forçada em um planeta alienígena que muda de forma, Selene se vê lutando com unhas e dentes pela sobrevivência. Ela é derrotada várias vezes e forçada a reiniciar sua jornada toda vez que morre. Neste jogo de tiro ao estilo rougue, tanto o planeta quanto seu equipamento mudam a cada ciclo, forçando você a adaptar seu estilo de jogo e enfrentar desafios em evolução. Envolva os inimigos em confrontos cheios de balas. Vasculhe a tecnologia alienígena para melhorar suas habilidades. Estabeleça uma conexão pessoal com o planeta e reconheça a história de Selene.</p>
       
       <h1></h1>
       <h4>ESPECIFICAÇÕES TÉCNICAS:</h4>
       <ul>
-        <li>Plataforma: Playstation 4</li>
-        <li>Gênero: Ação</li>
-        <li>Produtora: Santa Mônica Studio</li>
+        <li>Plataforma: Playstation 5</li>
+        <li>Gênero: Tiro</li>
+        <li>Produtora: Sony Entertainment System</li>
         <li>Idioma: Português</li>
         <li>Legenda: Português</li>
-        <li>Tamanho: 38.62 GB</li>
-        <li>Data de Lançamento: 20/04/2018</li>
+        <li>Tamanho: Ainda a confirmar</li>
+        <li>Data de Lançamento: 30/04/2021</li>
       </ul>
     </div>
   </div>
@@ -385,7 +383,7 @@
                 // Salva o preço exibido NO MOMENTO de adicionar à lista
                 jogo.preco = precoAtualExibido;
                 // ATENÇÃO: Certifique-se que este link está correto
-                jogo.comprarLink = '/Games/God of War.html';
+                jogo.comprarLink = '/Games/Returnal.html';
                 listaDesejos.push(jogo);
                 localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
                 openWishlistModal();

@@ -238,15 +238,15 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="./PS4/PS4.html">PS4</a></li>
+                <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="/PS4/PS4.html">PS4</a></li>
                 <li class="breadcrumb-item active" aria-current="page">The Last of Us Part II</li>
             </ol>
         </nav>
 
         <div class="game-details">
             <div class="game-cover">
-                <img src="./IMGS - JOGOS/Capa - The Last of Us Part II.jpeg" alt="Capa The Last of Us Part II">
+                <img src="/IMGS - JOGOS/Capa - The Last of Us Part II.jpeg" alt="Capa The Last of Us Part II">
             </div>
             <div class="game-info">
                 <h2>The Last of Us Part II</h2>
@@ -263,8 +263,8 @@
                     <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
                 </div>
                 <div class="wishlist">
-                    <img src="./IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos"
-                        onclick="adicionarÀListaDeDesejos({id: 'TLOU2', nome: 'The Last of Us Part II', imagem: './IMGS - JOGOS/Capa - The Last of Us Part II.jpeg', link: './Games/The Last of Us Part II.html'})">
+                    <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos"
+                        onclick="adicionarÀListaDeDesejos({id: 'TLOU2', nome: 'The Last of Us Part II', imagem: '/IMGS - JOGOS/Capa - The Last of Us Part II.jpeg', link: '/Games/The Last of Us Part II.html'})">
                 </div>
                 <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="TLOU2"
                     data-nome="The Last of Us Part II" data-tipo="" data-preco="">Comprar</button>
@@ -274,7 +274,7 @@
         <h2>Detalhes do Produto</h2>
 
         <div class="game-banner">
-            <img src="./Banners/Banner TLOU2.jpg" alt="Banner The Last of Us Part II">
+            <img src="/Banners/Banner TLOU2.jpg" alt="Banner The Last of Us Part II">
         </div>
 
         <div class="product-details">
@@ -316,7 +316,7 @@
 
     <script>
         // Carregar o header
-        fetch('./Header.html')
+        fetch('/Header.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erro ao carregar o header');
@@ -329,7 +329,7 @@
             .catch(error => console.error(error));
 
         // Carregar o footer
-        fetch('./Footer.html')
+        fetch('/Footer.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erro ao carregar o footer');
@@ -390,7 +390,7 @@
                 alert(`${jogo.nome} já está na sua lista de desejos!`);
             } else {
                 // Adicionando o link da página de compra ao objeto 'jogo'
-                jogo.comprarLink = './Games/The Last of Us Part II.html'; // Altere para o link de compra correto
+                jogo.comprarLink = '/Games/The Last of Us Part II.html'; // Altere para o link de compra correto
                 listaDesejos.push(jogo);
                 localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
                 openWishlistModal();
@@ -410,7 +410,7 @@
                     alert(`${jogoNome} já está no carrinho!`);
                 } else {
                     // Redireciona para a página do carrinho, passando os dados
-                    window.location.href = `./carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
+                    window.location.href = `/carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
                 }
             }
         }
@@ -431,7 +431,7 @@
         }
 
         function goToWishlist() {
-            window.location.href = './Lista de Desejos.html';
+            window.location.href = '/Lista de Desejos.html';
         }
 
         // Fechar o modal se o usuário clicar fora dele

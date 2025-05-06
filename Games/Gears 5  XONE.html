@@ -238,15 +238,15 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="./Xbox One/XboxOne.html">Xbox One</a></li>
+                <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="/Xbox One/XboxOne.html">Xbox One</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Gears 5</li>
             </ol>
         </nav>
 
         <div class="game-details">
             <div class="game-cover">
-                <img src="./IMGS - JOGOS/Capa - Gears5.jpg" alt="Capa Gears 5">
+                <img src="/IMGS - JOGOS/Capa - Gears5.jpg" alt="Capa Gears 5">
             </div>
             <div class="game-info">
                 <h2>Gears 5</h2>
@@ -262,8 +262,8 @@
                     <div>Até 3x de R$ 13,33 sem juros ou R$ 37,99 via Pix</div>
                 </div>
                 <div class="wishlist">
-                    <img src="./IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos"
-                         onclick="adicionarÀListaDeDesejos({id: 'xONEGears5', nome: 'Gears 5', imagem: './IMGS - JOGOS/Capa - Gears5.jpg', link: './Games/Gears 5  XONE.html'})">
+                    <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos"
+                         onclick="adicionarÀListaDeDesejos({id: 'xONEGears5', nome: 'Gears 5', imagem: '/IMGS - JOGOS/Capa - Gears5.jpg', link: '/Games/Gears 5  XONE.html'})">
                 </div>
                  <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="xONEGears5"
                     data-nome="Gears 5" data-tipo="" data-preco="">Comprar</button>
@@ -273,7 +273,7 @@
         <h2>Detalhes do Produto</h2>
 
         <div class="game-banner">
-             <img src="./Banners/Banner Gears5.png" alt="Banner Gears 5">
+             <img src="/Banners/Banner Gears5.png" alt="Banner Gears 5">
         </div>
 
         <div class="product-details">
@@ -309,7 +309,7 @@
 
     <script>
         // Carregar o header
-        fetch('./Header.html')
+        fetch('/Header.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erro ao carregar o header');
@@ -322,7 +322,7 @@
             .catch(error => console.error(error));
 
         // Carregar o footer
-        fetch('./Footer.html')
+        fetch('/Footer.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erro ao carregar o footer');
@@ -337,20 +337,20 @@
         // ATENÇÃO: Atualize os preços e parcelamentos para Gears 5
         const detalhesLicenca = {
             primaria: {
-                price: 'R$ 149,99', // Exemplo - MUDAR
-                installments: 'Até 3x de R$ 50,00 sem juros ou R$ 142,49 via Pix' // Exemplo - MUDAR
+                price: 'R$ 149,99', 
+                installments: 'Até 3x de R$ 50,00 sem juros ou R$ 142,49 via Pix' 
             },
             secundaria: {
-                price: 'R$ 89,99', // Exemplo - MUDAR
-                installments: 'Até 3x de R$ 30,00 sem juros ou R$ 85,49 via Pix' // Exemplo - MUDAR
+                price: 'R$ 89,99', 
+                installments: 'Até 3x de R$ 30,00 sem juros ou R$ 85,49 via Pix' 
             },
             aluguel: {
-                price: 'R$ 39,99', // Exemplo - MUDAR
-                installments: 'Até 3x de R$ 13,33 sem juros ou R$ 37,99 via Pix' // Exemplo - MUDAR
+                price: 'R$ 39,99', 
+                installments: 'Até 3x de R$ 13,33 sem juros ou R$ 37,99 via Pix' 
             }
         };
 
-        // Função mostrarDetalhes (sem alterações na lógica interna)
+        // Função mostrarDetalhes
         function mostrarDetalhes(tipoLicenca) {
             const detalhes = detalhesLicenca[tipoLicenca];
             if (detalhes) {
@@ -382,7 +382,7 @@
                 // Salva o preço exibido NO MOMENTO de adicionar à lista
                 jogo.preco = precoAtualExibido;
                 // ATENÇÃO: Certifique-se que este link está correto
-                jogo.comprarLink = './Games/Gears 5  XONE.html';
+                jogo.comprarLink = '/Games/Gears 5  XONE.html';
                 listaDesejos.push(jogo);
                 localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
                 openWishlistModal();
@@ -402,7 +402,7 @@
                 if (verificarDuplicidade(jogoNome)) {
                     alert(`${jogoNome} já está no carrinho!`);
                 } else {
-                    window.location.href = `./carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
+                    window.location.href = `/carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
                 }
             }
         }
@@ -421,7 +421,7 @@
             document.getElementById('wishlistModal').style.display = "none";
         }
         function goToWishlist() {
-            window.location.href = './Lista de Desejos.html';
+            window.location.href = '/Lista de Desejos.html';
         }
         window.onclick = function(event) {
             const modal = document.getElementById('wishlistModal');
